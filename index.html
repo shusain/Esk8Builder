@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link data-require="bootstrap-css@*" data-semver="4.0.0-alpha.4" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+    <script data-require="angular.js@1.6.2" data-semver="1.6.2" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="myApp" ng-controller="MyCtrl as myctrl">
+    <h1>ESK8 Builder</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          
+          <div class="btn-group-vertical">
+            <button ng-class="{'btn-primary':category==myctrl.selectedCategory, 'btn-secondary':category!=myctrl.selectedCategory}"
+                    ng-click="myctrl.selectedCategory=category; myctrl.selectedSubCategory = null"
+                    class="btn"
+                    type="button"
+                    ng-repeat="category in myctrl.categories">
+              {{category.label}}
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-6">
+          <div>
+            <h2>{{myctrl.selectedCategory.label}}</h2>
+            <div class="btn-group">
+              <button ng-click="myctrl.selectedSubCategory=category; myctrl.selectedComponents = category.components" class="btn btn-secondary" type="button" ng-repeat="category in myctrl.selectedCategory.subcategories">
+                {{category.label}}
+              </button>
+            </div>
+            
+            <div>
+              {{myctrl.selectedCategory.description}}
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <hr/>
+      
+      <div class="row">
+        <div class="col-sm-12">
+          <h3>{{myctrl.selectedSubCategory.label}}</h3>
+          {{myctrl.selectedSubCategory.description}}
+          <ul>
+            <li ng-repeat="spec in myctrl.selectedSubCategory.keySpecs">
+              {{spec}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="list-group">
+            <div class="list-group-item" ng-repeat="component in myctrl.selectedComponents">
+                <label>
+                  <!--<input type="radio" ng-model="myctrl.chosenComponent" ng-value="component"/>-->
+                  <strong>{{component.name}}</strong> - {{component.description}}
+                </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
