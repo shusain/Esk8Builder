@@ -23,9 +23,9 @@ For the nerds/developers interested in working on the code itself:
 
 Prerequisites for the project are having node/npm and gulp installed
 
-  1 Clone the repository
-  2 Run `npm install` in the project root to get dependencies for building/running the site
-  3 Run `gulp` default task is to build the project then start watching the files for changes to auto-refresh the build and browser when files are changed to make development go more rapidly.
+  1. Clone the repository
+  2. Run `npm install` in the project root to get dependencies for building/running the site
+  3. Run `gulp` default task is to build the project then start watching the files for changes to auto-refresh the build and browser when files are changed to make development go more rapidly.
 
 Once you verify your changes are working can push your code to a fork and put in a PR for me to accept the changes, if you plan to contribute often and are a member/regular on the esk8 forums ping me and I will add your github account as a contributor on this project so you can merge changes yourself.  Any changes merged into the master branch are seen by travis CI and it runs the gulp build then deploys the dist folder to the gh-pages branch so it goes live a few minutes after changes are submitted to the master branch.
 
