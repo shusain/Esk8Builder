@@ -1,0 +1,23 @@
+{
+  "name": "esk8builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shusain/Esk8Builder.git"
+  },
+  "keywords": [
+    "Electric",
+    "Skateboard"
+  ],
+  "author": "Shaun Husain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shusain/Esk8Builder/issues"
+  },
+  "homepage": "https://github.com/shusain/Esk8Builder#readme"
+}
