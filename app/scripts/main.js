@@ -3,7 +3,19 @@
 angular.module('myApp', [])
 
   // Inject all the data services into the controller so they can be bound into the view
-  .controller("MyCtrl", function(PowerAndDriveTrain, Batteries, LoopKeyOrSwitches, BatteryChargers, ESC){
+  .controller("MyCtrl", function(
+    PowerAndDriveTrain,
+    Batteries,
+    LoopKeyOrSwitches,
+    BatteryChargers,
+    ESC,
+    ControllerAndReceiver,
+    Enclosures,
+    WiringAndConnectors,
+    OtherElectronics,
+    Decks,
+    Wheels,
+    Risers) {
     var ctrl = this;
     
     ctrl.categories = [
@@ -12,27 +24,13 @@ angular.module('myApp', [])
       LoopKeyOrSwitches.data,
       BatteryChargers.data,
       ESC.data,
-      {
-        label: "Controller or Transmitter and Receiver"
-      },
-      {
-        label: "Enclosures"
-      },
-      {
-        label: "Wiring and connectors"
-      },
-      {
-        label: "Lights, telemetry, extra electronics"
-      },
-      {
-        label: "Decks"
-      },
-      {
-        label: "Wheels"
-      },
-      {
-        label: "Risers"
-      }
+      ControllerAndReceiver.data,
+      Enclosures.data,
+      WiringAndConnectors.data,
+      OtherElectronics.data,
+      Decks.data,
+      Wheels.data,
+      Risers.data
     ];
   })
 

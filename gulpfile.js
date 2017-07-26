@@ -18,7 +18,7 @@ function rebuildProject(){
     .pipe(usemin({
       css: [ ],
       html: [ htmlmin({ collapseWhitespace: true }) ],
-      js: [ babel({presets: ['es2016'], "plugins": ["transform-es2015-template-literals"]}), ngAnnotate(), uglify()],
+      js: [ babel({presets: ['es2016'], "plugins": ["transform-es2015-template-literals", "transform-es2015-arrow-functions"]}), ngAnnotate(), uglify()],
       inlinejs: [ uglify() ],
       inlinecss: [ cleanCss(), 'concat' ]
     }))
