@@ -12,6 +12,7 @@ gulp.task('test', function(){
   console.log("let's assume everything is going great");
 })
 
+
 function rebuildProject(){
   return gulp.src('./app/*.html')
     .pipe(usemin({
@@ -23,6 +24,10 @@ function rebuildProject(){
     }))
     .pipe(gulp.dest('dist/'));
 }
+
+// Regular build for deployment
+gulp.task('build', rebuildProject);
+
 
 // Static server
 gulp.task('default', function() {
