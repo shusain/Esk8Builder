@@ -11,7 +11,7 @@ angular.module('myApp')
         components: [
           {
             name: "Turnigy SK3 6374",
-            kv: 149
+            KV: 149
           }
         ]
       }

@@ -14,6 +14,7 @@
     <!-- build:js js/app.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/powerAndDriveTrain/motors.js"></script>
+    <script src="scripts/powerAndDriveTrain/motorMounts.js"></script>
     <script src="scripts/powerAndDriveTrain/_powerAndDriveTrain.js"></script>
     <script src="scripts/batteryPower/_batteries.js"></script>
     <script src="scripts/batteryPower/lipo.js"></script>
@@ -21,6 +22,10 @@
     <script src="scripts/loopKeyOrSwitches/_loopKeyOrSwitches.js"></script>
     <script src="scripts/batteryChargers/_batteryChargers.js"></script>
     <script src="scripts/esc/_esc.js"></script>
+    <script src="scripts/esc/mtbFriendly.js"></script>
+    <script src="scripts/esc/highGrade.js"></script>
+    <script src="scripts/esc/usable.js"></script>
+    <script src="scripts/esc/escSharedSpecs.js"></script>
     <script src="scripts/controllerAndReceiver/_controllerAndReceiver.js"></script>
     <script src="scripts/enclosures/_enclosures.js"></script>
     <script src="scripts/wiringAndConnectors/_wiringAndConnectors.js"></script>
@@ -43,7 +48,7 @@
           
           <div class="btn-group-vertical">
             <button ng-class="{'btn-primary':category==myctrl.selectedCategory, 'btn-secondary':category!=myctrl.selectedCategory}"
-                    ng-click="myctrl.selectedCategory=category; myctrl.selectedSubCategory = null"
+                    ng-click="myctrl.selectedCategory=category; myctrl.selectedSubCategory = null; myctrl.selectedComponents=null"
                     class="btn"
                     type="button"
                     ng-repeat="category in myctrl.categories">
@@ -63,7 +68,13 @@
             <div>
               {{myctrl.selectedCategory.description}}
             </div>
-            
+            <hr>
+            <h4 ng-if="myctrl.selectedCategory.keySpecs">Key Specifications</h4>
+            <ul>
+              <li ng-repeat="spec in myctrl.selectedCategory.keySpecs">
+                {{spec}}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -74,6 +85,7 @@
         <div class="col-sm-12">
           <h3>{{myctrl.selectedSubCategory.label}}</h3>
           {{myctrl.selectedSubCategory.description}}
+          <h4 ng-if="myctrl.selectedSubCategory.keySpecs">Key Specifications</h4>
           <ul>
             <li ng-repeat="spec in myctrl.selectedSubCategory.keySpecs">
               {{spec}}
@@ -89,6 +101,13 @@
                 <label>
                   <!--<input type="radio" ng-model="myctrl.chosenComponent" ng-value="component"/>-->
                   <strong>{{component.name}}</strong> - {{component.description}}
+
+                  <table class="table table-inverse">
+                    <tr ng-repeat="spec in myctrl.selectedSubCategory.keySpecs">
+                      <th>{{spec}}</th>
+                      <td>{{component[spec]}}</td>
+                    </tr>
+                  </table>
                 </label>
             </div>
           </div>

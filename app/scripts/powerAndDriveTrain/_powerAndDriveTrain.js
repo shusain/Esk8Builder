@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-  .service('PowerAndDriveTrain', function(Motors){
+  .service('PowerAndDriveTrain', function(Motors, MotorMounts){
     var service = {
 
       data: {
@@ -11,13 +11,7 @@ angular.module('myApp')
                       from the moving parts to the ground.`,
         subcategories: [
           Motors.data,
-          {
-            label: "Motor Mount",
-            description: `The motor mount clamps onto the trucks and holds the motor
-                          parallel to the trucks.  Mount materials, designs, and clamping
-                          mechanisms vary from vendor to vendor, but all essentially hold
-                          the motor a fixed distance and angle relative to the trucks.`
-          },
+          MotorMounts.data,
           {
             label: "Pulleys"
           },
