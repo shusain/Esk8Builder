@@ -1,12 +1,11 @@
-sudo: false
-dist: trusty
 language: node_js
 node_js:
   - "7"
+sudo: false
+dist: trusty
 cache:
   directories:
     - "node_modules"
-
 deploy:
   provider: pages
   skip_cleanup: true
