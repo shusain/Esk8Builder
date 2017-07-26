@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/shusain/Esk8Builder/issues"
   },
-  "homepage": "https://github.com/shusain/Esk8Builder#readme"
+  "homepage": "https://github.com/shusain/Esk8Builder#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
