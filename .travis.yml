@@ -6,9 +6,14 @@ dist: trusty
 cache:
   directories:
     - "node_modules"
+before_script:
+  - npm install -g gulp-cli
+script: gulp
 deploy:
   provider: pages
   skip_cleanup: true
+  file_glob: true
+  file: dist/*
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   on:
     branch: master

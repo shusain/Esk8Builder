@@ -2,16 +2,35 @@
 <html lang="en">
 
   <head>
-    <link data-require="bootstrap-css@*" data-semver="4.0.0-alpha.4" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
-    <script data-require="angular.js@1.6.2" data-semver="1.6.2" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+    
+    <!-- build:inlinecss -->
     <link rel="stylesheet" href="style.css" />
+    <!-- endbuild -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="script.js"></script>
+
+    <!-- build:js js/app.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/powerAndDriveTrain/motors.js"></script>
+    <script src="scripts/powerAndDriveTrain/_powerAndDriveTrain.js"></script>
+    <script src="scripts/batteryPower/_batteries.js"></script>
+    <script src="scripts/batteryPower/lipo.js"></script>
+    <script src="scripts/batteryPower/lifepo.js"></script>
+    <script src="scripts/loopKeyOrSwitches/_loopKeyOrSwitches.js"></script>
+    <script src="scripts/batteryChargers/_batteryChargers.js"></script>
+    <script src="scripts/esc/_esc.js"></script>
+    <!-- endbuild -->
   </head>
 
   <body ng-app="myApp" ng-controller="MyCtrl as myctrl">
-    <h1>ESK8 Builder</h1>
     <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>ESK8 Builder</h1>
+        </div>
+      </div>
       <div class="row">
         <div class="col-lg-4 col-md-6">
           

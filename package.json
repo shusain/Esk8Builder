@@ -2,7 +2,7 @@
   "name": "esk8builder",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "app/script.js",
   "scripts": {
     "test": "gulp test"
   },
@@ -21,6 +21,15 @@
   },
   "homepage": "https://github.com/shusain/Esk8Builder#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "babel-plugin-transform-es2015-template-literals": "^6.22.0",
+    "babel-preset-es2016": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-usemin": "^0.3.28"
   }
 }
